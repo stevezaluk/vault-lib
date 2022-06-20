@@ -1,5 +1,4 @@
 import os, sys, requests, json
-from ossaudiodev import control_names
 
 from ..errors import *
 

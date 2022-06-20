@@ -75,4 +75,4 @@ class LocalFile(object):
 			self.path = self.path.replace("~", os.getenv("HOME"))
 		
 		if os.path.exists(self.path) is False:
-			raise LocalFileNotFound("Local file could not be found: ", self.path)
+			raise LocalFileNotFound("Local file could not be found: " + self.path)

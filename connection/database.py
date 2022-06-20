@@ -15,17 +15,25 @@ class Database(object):
 
         self._client = None
 
-        self.vault_db = self.get_database("vaultdb")
-        self.archive_db = self.get_database("archivedb")
-        self.metrics_db = self.get_database("metricsdb")
+        self.vault_db = None
+        self.archive_db = None
+        self.metrics_db =  None
 
     def connect(self):
         if self._client is None:
             self._client = MongoClient(self.ip_address, self.port)
+            
+            self.vault_db = self.get_database("vaultdb")
+            self.archive_db = self.get_database("archivedb")
+            self.metrics_db = self.get_database("metricsdb")
         
     def disconnect(self):
         if self._client is not None:
             self._client.close()
+
+            self.vault_db = None
+            self.archive_db = None
+            self.metrics_db =  None
 
     def get_client(self):
         return self._client

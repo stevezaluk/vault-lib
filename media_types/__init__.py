@@ -1,7 +1,7 @@
 import os, sys
 
-from core.file import MediaFile, PlexFile, File
-from media_types.game import Game
+from ..core.file import MediaFile, PlexFile, File
+from ..media_types.game import Game
 
 def generate_object(json: dict):
     keys = json.keys()

@@ -82,12 +82,16 @@ class VAULTServer(HTTPConnection):
         endpoint = "standards"
 
 class LocalVAULTServer(object):
-    def __init__(self, ip_address: str, port: int, database: Database, plex: Plex) -> None:
-        self.ip_address = ip_address
-        self.port = port
+    def __init__(self, mongo_ip: str, mongo_port: int, plex_ip: str, plex_port: int, plex_token: str) -> None:
+        self.mongo_ip = mongo_ip
+        self.mongo_port = mongo_port
 
-        self.database = database
-        self.plex = plex
+        self.plex_ip = plex_ip
+        self.plex_port = plex_port
+        self.plex_token = plex_token
+
+        self.database = Database(self.mongo_ip, self.mongo_port)
+        self.plex = Plex(self.plex_ip, self.plex_port, self.plex_token)
 
     def connect(self):
         self.database.connect()

@@ -1,7 +1,7 @@
 import os, sys
 
-from media_types.tv_show import TVShow
-from errors import InvalidJSONDocument
+from ..media_types.tv_show import TVShow
+from ..errors import InvalidJSONDocument
 
 class Anime(TVShow):
     def __init__(self, json: dict):

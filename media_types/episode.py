@@ -1,8 +1,8 @@
 import os, sys
-from errors import InvalidJSONDocument
+from ..errors import InvalidJSONDocument
 
-from core.file import MediaFile
-from media_types.tv_show import TVShow
+from ..core.file import MediaFile
+from ..media_types.tv_show import TVShow
 
 class Episode(MediaFile):
 	def __init__(self, json):

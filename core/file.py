@@ -1,7 +1,7 @@
 import os, sys
 
-from core.base import VAULTObject
-from errors import InvalidJSONDocument, LocalFileNotFound
+from ..core.base import VAULTObject
+from ..errors import InvalidJSONDocument, LocalFileNotFound
 
 class File(VAULTObject):
 	def __init__(self, json:dict):

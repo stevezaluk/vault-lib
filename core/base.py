@@ -1,6 +1,6 @@
 import os, sys
 
-from errors import InvalidJSONStructure
+from ..errors import InvalidJSONStructure
 
 class VAULTObject(object):
 	def __init__(self, json):

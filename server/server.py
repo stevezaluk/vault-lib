@@ -1,10 +1,10 @@
 import os, sys, requests
 
-from connection.database import Database
-from connection.plex import Plex
-from connection.http import HTTPConnection
+from ..connection.database import Database
+from ..connection.plex import Plex
+from ..connection.http import HTTPConnection
 
-from media_types import generate_object
+from ..media_types import generate_object
 
 class VAULTServer(HTTPConnection):
     def __init__(self, ip_address: str, port: int) -> None:

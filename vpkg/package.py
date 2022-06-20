@@ -1,6 +1,6 @@
 import os, json
 
-from core.base import VAULTObject
+from ..core.base import VAULTObject
 
 class Package(VAULTObject):
     def __init__(self, json: dict):

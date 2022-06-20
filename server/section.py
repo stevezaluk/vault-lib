@@ -1,7 +1,7 @@
 import os, sys
 
-from core.base import VAULTObject
-from errors import InvalidJSONDocument
+from ..core.base import VAULTObject
+from ..errors import InvalidJSONDocument
 
 class Section(VAULTObject):
     def __init__(self, json):

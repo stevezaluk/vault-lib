@@ -1,7 +1,7 @@
 import os, sys, requests, json
 from ossaudiodev import control_names
 
-from errors import *
+from ..errors import *
 
 class HTTPConnection(object):
   def __init__(self, base_url):

@@ -1,7 +1,7 @@
 import os, sys
-from errors import InvalidJSONDocument
 
-from core.file import File
+from ..core.file import File
+from ..errors import InvalidJSONDocument
 
 class Game(File):
     def __init__(self, json):

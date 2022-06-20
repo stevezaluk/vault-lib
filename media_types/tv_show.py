@@ -1,7 +1,7 @@
 import os, sys
 
-from core.directory import Directory
-from errors import InvalidJSONDocument
+from ..core.directory import Directory
+from ..errors import InvalidJSONDocument
 
 class TVShow(Directory):
 	def __init__(self, json: dict):

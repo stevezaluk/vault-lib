@@ -1,7 +1,7 @@
 import os, sys
 
 from ..core.file import MediaFile, PlexFile, File
-from ..media_types.game import Game
+from ..media_types.game import GameFile
 
 def generate_object(json: dict):
     keys = json.keys()
@@ -10,6 +10,6 @@ def generate_object(json: dict):
     elif "media_info" in keys:
         return MediaFile(json)
     elif "game_info" in keys:
-        return Game(json)
+        return GameFile(json)
     elif "course_info" in keys:
         return 

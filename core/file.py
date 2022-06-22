@@ -39,6 +39,7 @@ class MediaFile(File):
 		self.video_codec = self._media_info["video_codec"]
 		self.video_codec_lib = self._media_info["video_codec_lib"]
 		self.audio_codec = self._media_info["audio_codec"]
+		self.languages = self._media_info["languages"]
 
 	def validate(self):
 		if "media_info" not in self.get_json().keys():
@@ -57,8 +58,8 @@ class PlexFile(MediaFile):
 		self.content_rating = self.plex_info["content_rating"]
 		self.user_rating = self.plex_info["user_rating"]
 
-		# self.plex_episode_count = None
-		# self.plex_season_count = None
+		self.plex_episode_count = None
+		self.plex_season_count = None
 
 	def validate(self):
 		if "plex_info" not in self.get_json().keys():

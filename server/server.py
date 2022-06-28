@@ -20,7 +20,7 @@ class VAULTServer(HTTPConnection):
         else:
             endpoint = "search"
 
-        resp = self.query(endpoint, params={"q":q, "limit":limit})
+        resp = self._query(endpoint, params={"q":q, "limit":limit})
 
     def index(self, section=None, limit=20):
         if section:
@@ -28,7 +28,7 @@ class VAULTServer(HTTPConnection):
         else:
             endpoint = "index"
 
-        resp = self.query(endpoint, params={"limit":limit})
+        resp = self._query(endpoint, params={"limit":limit})
 
         # convert to object
 
@@ -38,7 +38,7 @@ class VAULTServer(HTTPConnection):
         else:
             endpoint = "file/{}".format(term)
 
-        resp = self._query(endpoint)
+        resp = self.__query(endpoint)
 
         return generate_object(resp)
 
@@ -46,14 +46,14 @@ class VAULTServer(HTTPConnection):
         sections = []
         endpoint = "sections"
 
-        resp = self._query(endpoint)
+        resp = self.__query(endpoint)
 
         # convert ot object
 
     def get_section(self, section):
         endpoint = "sections/{}".format(section)
 
-        resp = self._query(endpoint)
+        resp = self.__query(endpoint)
 
         return generate_object(resp)
 

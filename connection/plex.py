@@ -14,7 +14,7 @@ class Plex(object):
     def connect(self):
         if self._server is None:
             self._server = PlexServer(baseurl="http://{i}:{p}".format(i=self.ip_address, p=self.port), token=self.token)
-            self._sections = self.server.library.sections()
+            self._sections = self._server.library.sections()
 
     def disconnect(self):
         if self._server is not None:

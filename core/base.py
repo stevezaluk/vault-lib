@@ -7,7 +7,7 @@ class VAULTObject(object):
 		self.__json = json
 		self.__id = None
 
-		self.keys = ["file_name", "file_size", "file_location",
+		self.keys = ["file_name", "file_size",
 						"file_type", "file_section", "file_sha",
 						"file_status", "uploaded_by", "uploaded_date", 
 						"media_info", "video_codec", "audio_codec", 

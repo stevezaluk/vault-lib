@@ -9,6 +9,7 @@ class File(VAULTObject):
 
 		self.validate()
 
+		print("file")
 		self.file_name = self.get_json()["file_name"]
 		self.file_size = self.get_json()["file_size"]
 		self.file_type = self.get_json()["file_type"]
@@ -30,6 +31,7 @@ class MediaFile(File):
 		super(MediaFile, self).__init__(json)
 
 		self.validate()
+		print("media_file")
 
 		self._media_info = self.get_json()["media_info"]
 

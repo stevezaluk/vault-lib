@@ -11,7 +11,6 @@ class File(VAULTObject):
 
 		self.file_name = self.get_json()["file_name"]
 		self.file_size = self.get_json()["file_size"]
-		self.file_location = self.get_json()["file_location"]
 		self.file_type = self.get_json()["file_type"]
 		self.file_section = self.get_json()["file_section"]
 

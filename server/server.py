@@ -38,7 +38,7 @@ class VAULTServer(HTTPConnection):
         else:
             endpoint = "file/{}".format(term)
 
-        resp = self.__query(endpoint)
+        resp = self._query(endpoint)
 
         return generate_object(resp)
 
@@ -46,14 +46,14 @@ class VAULTServer(HTTPConnection):
         sections = []
         endpoint = "sections"
 
-        resp = self.__query(endpoint)
+        resp = self._query(endpoint)
 
         # convert ot object
 
     def get_section(self, section):
         endpoint = "sections/{}".format(section)
 
-        resp = self.__query(endpoint)
+        resp = self._query(endpoint)
 
         return generate_object(resp)
 

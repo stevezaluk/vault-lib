@@ -9,7 +9,6 @@ class File(VAULTObject):
 
 		self.validate()
 
-		print("file")
 		self.file_name = self.get_json()["file_name"]
 		self.file_size = self.get_json()["file_size"]
 		self.file_type = self.get_json()["file_type"]
@@ -31,7 +30,6 @@ class MediaFile(File):
 		super(MediaFile, self).__init__(json)
 
 		self.validate()
-		print("media_file")
 
 		self._media_info = self.get_json()["media_info"]
 
@@ -71,7 +69,19 @@ class LocalFile(object):
 		self.path = path
 
 		self.validate()
+		
+		self._stat = os.stat(self.path)
+		self._tokens = self.path.split("/")
 
+		self.file_name = self._tokens[-1]
+		self.file_size = self._stat.st_size
+		
+		self.file_sha = None
+		self.creation_date = self._stat.st_ctime
+
+	def get_stat(self):
+		return self._stat
+		
 	def validate(self):
 		if self.path.startswith("~"):
 			self.path = self.path.replace("~", os.getenv("HOME"))

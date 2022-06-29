@@ -1,7 +1,5 @@
 import os, sys
 
-from server.section import Section
-
 from ..core.file import MediaFile, PlexFile, File
 from ..media_types.game import GameFile
 from ..media_types.book import Book

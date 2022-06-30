@@ -28,7 +28,7 @@ class Plex(object):
                 name = name.split("/")[-1]
 
                 if name == file_name:
-                    return item.key
+                    return item, item.key
 
     def scan(self, section_name=None):
         for section in self._sections:

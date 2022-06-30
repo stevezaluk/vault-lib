@@ -64,6 +64,9 @@ class Database(object):
     def find_one_by_id(self, collection: Collection, id: str):
         return collection.find_one({"_id":ObjectId(id)})
 
+    def find(self, collection: Collection, query: dict):
+        return collection.find(query)
+
     def insert_one(self, collection: Collection, doc: dict):
         return collection.insert_one(doc)
     

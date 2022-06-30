@@ -6,11 +6,16 @@ from ..media_types.book import Book
 
 from ..media_types.tv_show import TVShow, TVEpisode
 
+from ..server.section import Section
+
 def generate_object(json: dict):
     keys = json.keys()
 
     ret = None
     for key in keys:
+        if key == "section_name":
+            return Section(json)
+        
         if key == "plex_info":
             ret = PlexFile(json)
 

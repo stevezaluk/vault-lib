@@ -53,9 +53,16 @@ class PlexFile(MediaFile):
 		self.plex_info = self.get_json()["plex_info"]
 
 		self.title = self.plex_info["title"]
+		self.type = self.plex_info["type"]
 		self.description = self.plex_info["description"]
 		self.content_rating = self.plex_info["content_rating"]
 		self.user_rating = self.plex_info["user_rating"]
+
+		self.added_at = self.plex_info["added_at"]
+		self.updated_at = self.plex_info["updated_at"]
+		self.view_count = self.plex_info["view_count"]
+
+		self.plex_section = self.plex_info["plex_section"]
 
 		self.plex_episode_count = None
 		self.plex_season_count = None

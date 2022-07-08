@@ -47,7 +47,12 @@ class VAULTServer(HTTPConnection):
         endpoint = "sections"
 
         resp = self._query(endpoint)
+        resp = resp["sections"]
 
+        for section in resp:
+            sections.append(generate_object(section))
+
+        return sections
         # convert ot object
 
     def get_section(self, section):

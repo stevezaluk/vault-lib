@@ -23,12 +23,19 @@ class VAULTServer(HTTPConnection):
         resp = self._query(endpoint, params={"q":q, "limit":limit})
 
     def index(self, section=None, limit=20):
+        index = []
         if section:
             endpoint = "index/{s}".format(s=section)
         else:
             endpoint = "index"
 
         resp = self._query(endpoint, params={"limit":limit})
+        resp = resp["results"]
+
+        for result in resp:
+            index.append(generate_object(result))
+
+        return index
 
         # convert to object
 

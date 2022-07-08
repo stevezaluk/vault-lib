@@ -13,7 +13,6 @@ class Section(VAULTObject):
         self.section_path = self.get_json()["section_path"]
         self.section_type = self.get_json()["section_type"]
         
-        self.total_size = self.get_json()["total_size"]
         
         self.total_files = self.get_json()["total_files"]
         self.total_downloads = self.get_json()["total_downloads"]
